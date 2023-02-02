@@ -2,19 +2,19 @@ package com.digitalers.clase1;
 
 public class Car {
 	
-	String brand;
-	String color;
-	String model;
-	Integer chasis;
-	Float maxVelocity;
-	Float currentSpeed;
-	Boolean newModel;
-	Boolean started;
+	private String brand;
+	private String color;
+	private String model;
+	private Integer chasis;
+	private Float maxSpeed;
+	private Float currentSpeed;
+	private Boolean newModel;
+	private Boolean started;
 	
 	Car(){
 		this.started=false;
 		this.color = "grey";
-		this.maxVelocity = 150f;
+		this.maxSpeed = 150f;
 		this.currentSpeed = 0f;
 		System.out.println("Creando auto");
 	}
@@ -24,7 +24,7 @@ public class Car {
 		this.started = false;
 		this.brand = brand;
 		this.model = model;
-		this.maxVelocity = maxVelocity;
+		this.maxSpeed = maxVelocity;
 	}
 	
 	void turnOn () {
@@ -47,20 +47,98 @@ public class Car {
 	}
 	
 	void breakCar() {
+		if (this.started) {
+			if (this.currentSpeed > 0) {
+				this.currentSpeed--;
+				System.out.println("El " + this.brand + " " + this.model + " va a " + this.currentSpeed + " km/h");
+			}else {
+				System.out.println("El auto no tiene velocidad");
+			}
+		}else {
+			System.out.println("El auto esta apagado");
+		}
 		
 	}
 	
 	void speedUp() {
 		if (this.started) {
-			if (this.currentSpeed < this.maxVelocity) {
-				this.currentSpeed = this.currentSpeed +1f;
-				System.out.println("El " + this.brand + " " + this.model + " va a " + this.currentSpeed + " km/h");
+			if (this.currentSpeed < this.maxSpeed) {
+				this.currentSpeed++;
 			}
 		}else {
 			System.out.println("El auto esta apagado, por favor encenderlo");
 		}
 	}
 
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public Integer getChasis() {
+		return chasis;
+	}
+
+	public void setChasis(Integer chasis) {
+		this.chasis = chasis;
+	}
+
+	public Float getMaxSpeed() {
+		return maxSpeed;
+	}
+
+	public void setMaxSpeed(Float maxSpeed) {
+		this.maxSpeed = maxSpeed;
+	}
+
+	public Float getCurrentSpeed() {
+		return currentSpeed;
+	}
+
+	public void setCurrentSpeed(Float currentSpeed) {
+		this.currentSpeed = currentSpeed;
+	}
+
+	public Boolean getNewModel() {
+		return newModel;
+	}
+
+	public void setNewModel(Boolean newModel) {
+		this.newModel = newModel;
+	}
+
+	public Boolean getStarted() {
+		return started;
+	}
+
+	public void setStarted(Boolean started) {
+		this.started = started;
+	}
+	
+	public boolean canSpeedUp() {
+		return this.started && this.currentSpeed < this.maxSpeed;
+	}
+	
+	
 	
 	
 	

@@ -7,16 +7,22 @@ public class Main {
 		Car fox = new Car("Clio", "Renault", 150f);
 		fox.turnOn();
 		fox.speedUp();
+		fox.breakCar();
 		fox.speedUp();
+		fox.breakCar();
 		fox.speedUp();
+		fox.breakCar();
+		fox.breakCar();
 		fox.turnOff();
 		
 		
-		Car up = new Car("Vw", "Up", 130f);
+		Car up = new Car("Vw", "Up", 150f);
 		up.turnOn();
-		up.turnOff();
-		up.speedUp();
 		
+		while (up.canSpeedUp()) {
+			up.speedUp();
+		}
+		System.out.println("Velocidad: " + up.getCurrentSpeed());
 
 	}
 
