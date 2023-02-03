@@ -14,8 +14,6 @@ public class Article {
 		this.price = price;
 	}
 
-
-
 	public String getTitle() {
 		return title;
 	}
