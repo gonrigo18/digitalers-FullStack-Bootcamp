@@ -2,10 +2,10 @@ package com.digitalers.clase1.buscador;
 
 public class Article {
 
-	private String title;
-	private String autor;
-	private Float price;
-	private String image;
+	protected String title;
+	protected String autor;
+	protected Float price;
+	protected String image;
 
 	public Article(String title, String autor, Float price) {
 		this.title = title;
