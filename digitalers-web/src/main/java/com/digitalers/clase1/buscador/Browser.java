@@ -34,10 +34,9 @@ public class Browser {
 		Article article1 = new Book("TONY STARK IRON MAN 2", "SLOTT,DAN", 910f, "sfff", 5);
 		String[] songs = new String[] { "tema-1", "tema-2" };
 
-		Article article2 = new Music("EL INVENCIBLE IRON MAN 2", "SLOTT,DAN", 910f, "sony",
-				new String[] { "tema1", "tema2" });
+		Article article2 = new Music("EL INVENCIBLE IRON MAN 2", "SLOTT,DAN", 910f, "sony", songs);
 		Article article3 = new Book("titulo", "autor", 1000f, "12345", 100);
-		Article article4 = new Music("ac/dc", "ac/dc", 1000f, "warner", new String[] { "tema1", "tema2" });
+		Article article4 = new Music("ac/dc", "ac/dc", 1000f, "warner", songs);
 		Article article5 = new Film("Nemo", "Nemo", 100f, "Warner", "Fantasy");
 
 		Article[] results = new Article[] { article1, article2, article3, article4, article5 };
