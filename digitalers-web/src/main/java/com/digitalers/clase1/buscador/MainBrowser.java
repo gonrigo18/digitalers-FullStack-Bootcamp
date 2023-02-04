@@ -1,21 +1,25 @@
 package com.digitalers.clase1.buscador;
 
-import java.util.Vector;
 
 public class MainBrowser {
 
 	public static void main(String[] args) {
-		
-		Browser myBrowser = new Browser();
+
 		String searchKey = "iron man";
-		
+		Browser myBrowser = new Browser(searchKey);
+
 		myBrowser.find();
-		Article[] results = myBrowser.getArticle();	
-		
-		for (Article valor : results) {
-			System.out.println("Titulo: " + valor.getTitle()+ " | " + "Autor: " + valor.getAutor()+ " | " + "Precio: " + valor.getPrice());
-		}
-		 
+
+		if (myBrowser.isResult()) {
+			System.out.println("Se encontraron " + myBrowser.getQuantity() + " resultados para " + myBrowser.getKey() + ": ");
+			System.out.println(" ");
+			Article[] results = myBrowser.getArticle();
+			for (Article valor : results) {
+				valor.detail();
+				System.out.println("--------------------------");
+			}
+		} else
+			System.out.println("No hay resultados");
 
 	}
 
