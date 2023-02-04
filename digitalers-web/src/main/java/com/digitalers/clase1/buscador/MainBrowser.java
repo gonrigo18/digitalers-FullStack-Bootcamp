@@ -8,9 +8,13 @@ public class MainBrowser {
 		
 		Browser myBrowser = new Browser();
 		String searchKey = "iron man";
-		myBrowser.setKey(searchKey);
 		
 		myBrowser.find();
+		Article[] results = myBrowser.getArticle();	
+		
+		for (Article valor : results) {
+			System.out.println("Titulo: " + valor.getTitle()+ " | " + "Autor: " + valor.getAutor()+ " | " + "Precio: " + valor.getPrice());
+		}
 		 
 
 	}

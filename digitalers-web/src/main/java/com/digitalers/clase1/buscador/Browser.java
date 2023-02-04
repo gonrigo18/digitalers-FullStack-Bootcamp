@@ -30,14 +30,32 @@ public class Browser {
 		this.key = key;
 	}
 	
-	public Article[] findKey (String key, Vector listado) {
-		Article[] listado = new Article[] {}; 
-		for(int i = 0; i < article.length; i ++) {
-			if (key.equals(article.getTitle())) {
-				listado = article;
-			}
-		}
+	public void find() {
+		Article article1 = new Article ("TONY STARK IRON MAN 2", "SLOTT,DAN", 910f);
+		Article article2 = new Article ("EL INVENCIBLE IRON MAN 2", "SLOTT,DAN", 910f);
+		
+		Article[] results = new Article[2];
+		results[0] = article1;
+		results[1] = article2;
+		this.article = results;
+		this.quantity = article.length;
+		
+	}
+
+	public Article[] getArticle() {
 		return article;
+	}
+
+	public void setArticle(Article[] article) {
+		this.article = article;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 	
 	
