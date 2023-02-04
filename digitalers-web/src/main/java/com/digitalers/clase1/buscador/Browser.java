@@ -1,6 +1,7 @@
 package com.digitalers.clase1.buscador;
 
 import com.digitalers.clase3.herencia.Book;
+import com.digitalers.clase3.herencia.Film;
 import com.digitalers.clase3.herencia.Music;
 
 public class Browser {
@@ -30,17 +31,17 @@ public class Browser {
 	}
 
 	public void find() {
-		Article article1 = new Book("TONY STARK IRON MAN 2", "SLOTT,DAN", 910f,"sfff",5);
-		String [] songs = new String[] { "tema-1", "tema-2"}; 
-		Article article2 = new Music("EL INVENCIBLE IRON MAN 2", "SLOTT,DAN", 910f, "sony", songs);
-		Article article3 = new Article("IRON MAN 3", null, 910f);
-		Article article4 = new Article("nada", null, 910f);
+		Article article1 = new Book("TONY STARK IRON MAN 2", "SLOTT,DAN", 910f, "sfff", 5);
+		String[] songs = new String[] { "tema-1", "tema-2" };
 
-		Article[] results = new Article[4];
-		results[0] = article1;
-		results[1] = article2;
-		results[2] = article3;
-		results[3] = article4;
+		Article article2 = new Music("EL INVENCIBLE IRON MAN 2", "SLOTT,DAN", 910f, "sony",
+				new String[] { "tema1", "tema2" });
+		Article article3 = new Book("titulo", "autor", 1000f, "12345", 100);
+		Article article4 = new Music("ac/dc", "ac/dc", 1000f, "warner", new String[] { "tema1", "tema2" });
+		Article article5 = new Film("Nemo", "Nemo", 100f, "Warner", "Fantasy");
+
+		Article[] results = new Article[] { article1, article2, article3, article4, article5 };
+
 		this.article = results;
 		this.quantity = article.length;
 

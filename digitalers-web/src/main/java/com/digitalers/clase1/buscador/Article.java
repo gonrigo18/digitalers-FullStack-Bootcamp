@@ -52,7 +52,8 @@ public class Article {
 			System.out.print(this.autor);
 			System.out.print(" | ");
 		}
-		System.out.println(this.price);
+		System.out.print(this.price);
+		System.out.print(" | ");
 
 	}
 

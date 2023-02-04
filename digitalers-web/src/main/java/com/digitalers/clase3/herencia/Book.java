@@ -30,15 +30,12 @@ public class Book extends Article {
 	}
 
 	public void detail() {
-		System.out.print(this.title);
-		System.out.print(" | ");
-		if (this.autor != null) {
-			System.out.print(this.autor);
-			System.out.print(" | ");
-		}
-		System.out.print(this.price);
+		System.out.println("Book: ");
+		super.detail();
 		System.out.print(this.isbn);
+		System.out.print(" | ");
 		System.out.println(this.pages);
+		System.out.println("-----------------------------------------");
 
 	}
 

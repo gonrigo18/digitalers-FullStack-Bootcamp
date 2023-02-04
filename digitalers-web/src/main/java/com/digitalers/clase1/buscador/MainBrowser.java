@@ -1,6 +1,5 @@
 package com.digitalers.clase1.buscador;
 
-
 public class MainBrowser {
 
 	public static void main(String[] args) {
@@ -11,12 +10,12 @@ public class MainBrowser {
 		myBrowser.find();
 
 		if (myBrowser.isResult()) {
-			System.out.println("Se encontraron " + myBrowser.getQuantity() + " resultados para " + myBrowser.getKey() + ": ");
+			System.out.println(
+					"Se encontraron " + myBrowser.getQuantity() + " resultados para " + myBrowser.getKey() + ": ");
 			System.out.println(" ");
 			Article[] results = myBrowser.getArticle();
 			for (Article valor : results) {
 				valor.detail();
-				System.out.println("--------------------------");
 			}
 		} else
 			System.out.println("No hay resultados");
