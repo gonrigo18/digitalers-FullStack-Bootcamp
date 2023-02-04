@@ -5,9 +5,9 @@ import com.digitalers.clase1.buscador.Article;
 public class Book extends Article {
 
 	private String isbn;
-	private String pages;
+	private Integer pages;
 
-	public Book(String title, String autor, Float price, String isbn, String pages) {
+	public Book(String title, String autor, Float price, String isbn, Integer pages) {
 		super(title, autor, price);
 		this.isbn = isbn;
 		this.pages = pages;
@@ -21,12 +21,25 @@ public class Book extends Article {
 		this.isbn = isbn;
 	}
 
-	public String getPages() {
+	public Integer getPages() {
 		return pages;
 	}
 
-	public void setPages(String pages) {
+	public void setPages(Integer pages) {
 		this.pages = pages;
+	}
+
+	public void detail() {
+		System.out.print(this.title);
+		System.out.print(" | ");
+		if (this.autor != null) {
+			System.out.print(this.autor);
+			System.out.print(" | ");
+		}
+		System.out.print(this.price);
+		System.out.print(this.isbn);
+		System.out.println(this.pages);
+
 	}
 
 }

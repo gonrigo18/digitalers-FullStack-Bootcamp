@@ -29,5 +29,18 @@ public class Music extends Article {
 	public void setSongs(String[] songs) {
 		this.songs = songs;
 	}
+	
+	public void detail() {
+		System.out.print(this.title);
+		System.out.print(" | ");
+		if (this.autor != null) {
+			System.out.print(this.autor);
+			System.out.print(" | ");
+		}
+		System.out.print(this.price);
+		System.out.print(this.producer);
+		System.out.println(this.songs);
+
+	}
 
 }
