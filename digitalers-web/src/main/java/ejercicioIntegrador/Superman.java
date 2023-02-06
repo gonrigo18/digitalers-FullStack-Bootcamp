@@ -27,7 +27,7 @@ public class Superman extends Flying implements Landable {
 
 	@Override
 	public void canLand() {
-		System.out.println("Comenzando aterrizaje de " + getName());
+		System.out.println("Aterrizaje denegado a " + getName());
 		
 	}
 

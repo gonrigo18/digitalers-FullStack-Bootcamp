@@ -28,15 +28,5 @@ public abstract class Flying {
 			System.out.println("Soy un: " + obj.getType() + " -------- " + obj.toString());
 	}
 	
-	/*public static void canLand(Flying[] list) {
-		for (Flying obj : list) {
-			if (obj.getType().equalsIgnoreCase("Plane") || obj.getType().equalsIgnoreCase("Helicopter") || obj.getType().equalsIgnoreCase("Ovni")) {
-				System.out.println(obj.getType() + " puede aterrizar");
-			} else {
-				System.out.println(obj.getType() + " no puede aterrizar");
-			}
-		}
-
-	}*/
 
 }
