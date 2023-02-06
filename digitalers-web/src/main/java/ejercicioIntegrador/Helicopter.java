@@ -1,6 +1,6 @@
 package ejercicioIntegrador;
 
-public class Helicopter extends Flying {
+public class Helicopter extends Flying implements Landable {
 
 	private String color;
 
@@ -23,6 +23,12 @@ public class Helicopter extends Flying {
 	@Override
 	public String toString() {
 		return super.toString() + "Helicopter [color=" + color + "]";
+	}
+
+	@Override
+	public void canLand() {
+		System.out.println("Comenzando aterrizaje de " + getName());
+
 	}
 
 }

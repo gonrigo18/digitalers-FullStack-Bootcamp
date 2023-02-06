@@ -8,7 +8,6 @@ public class Main {
 
 		Flying[] flying = FlyingBuilder.flyingBuilder();
 		Flying.show(flying);
-		Flying.canLand(flying);
 
 	}
 

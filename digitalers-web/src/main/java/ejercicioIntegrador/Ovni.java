@@ -1,6 +1,6 @@
 package ejercicioIntegrador;
 
-public class Ovni extends Flying {
+public class Ovni extends Flying implements Landable {
 
 	private String shape;
 
@@ -23,6 +23,12 @@ public class Ovni extends Flying {
 	@Override
 	public String toString() {
 		return super.toString() + "Ovni [shape=" + shape + "]";
+	}
+
+	@Override
+	public void canLand() {
+		System.out.println("Comenzando aterrizaje de " + getName());
+
 	}
 
 }

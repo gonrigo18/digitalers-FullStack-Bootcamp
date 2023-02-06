@@ -1,6 +1,6 @@
 package ejercicioIntegrador;
 
-public class Plane extends Flying {
+public class Plane extends Flying implements Landable {
 
 	private String brand;
 
@@ -23,6 +23,12 @@ public class Plane extends Flying {
 	@Override
 	public String toString() {
 		return super.toString() + "Plane [brand=" + brand + "]";
+	}
+
+	@Override
+	public void canLand() {
+		System.out.println("Comenzando aterrizaje de " + getName());
+		
 	}
 
 }
