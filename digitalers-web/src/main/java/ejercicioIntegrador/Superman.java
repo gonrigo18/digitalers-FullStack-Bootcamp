@@ -1,6 +1,6 @@
 package ejercicioIntegrador;
 
-public class Superman extends Flying implements Landable {
+public class Superman extends Flying {
 
 	private Boolean wearCape;
 
@@ -25,10 +25,5 @@ public class Superman extends Flying implements Landable {
 		return super.toString() + "Superman [wearCape=" + wearCape + "]";
 	}
 
-	@Override
-	public void canLand() {
-		System.out.println("Aterrizaje denegado a " + getName());
-		
-	}
 
 }

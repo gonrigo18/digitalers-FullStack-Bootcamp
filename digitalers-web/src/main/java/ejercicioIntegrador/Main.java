@@ -10,8 +10,8 @@ public class Main {
 		//Flying.show(flying);
 
 		for (Flying obj : flying) {
-			System.out.println(obj.getName() + " puede aterrizar");
 			if (obj instanceof Landable) {
+				System.out.println(obj.getName() + " puede aterrizar");
 				Landable land = (Landable) obj;
 				land.canLand();
 			} else {
