@@ -1,6 +1,6 @@
 package evaluacionPractica;
 
-public abstract class Tripulante implements Metodos {
+public abstract class Tripulante {
 
 	protected Integer numeroCarnet;
 	protected Integer edad;
