@@ -33,9 +33,9 @@ public class Persona {
 	
 	public void decir (String frase, IIDioma idioma) throws NoIdiomaException {
 		
-		if (! ) {
+		/*if (! ) {
 			throws new NoIdiomaException(this.nombre, this.apellido, frase, idioma);
-		}
+		}*/
 		
 	}
 

@@ -10,6 +10,7 @@ public abstract class Flying {
 
 	public abstract String getType();
 
+
 	public String getName() {
 		return name;
 	}
@@ -27,6 +28,7 @@ public abstract class Flying {
 		for (Flying obj : list)
 			System.out.println("Soy un: " + obj.getType() + " -------- " + obj.toString());
 	}
+	
 	
 
 }

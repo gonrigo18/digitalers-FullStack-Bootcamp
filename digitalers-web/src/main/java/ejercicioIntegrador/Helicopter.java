@@ -30,5 +30,7 @@ public class Helicopter extends Flying implements Landable {
 		System.out.println("Comenzando aterrizaje de " + getName());
 
 	}
+	
+	
 
 }

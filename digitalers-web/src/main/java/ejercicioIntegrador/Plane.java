@@ -30,5 +30,6 @@ public class Plane extends Flying implements Landable {
 		System.out.println("Comenzando aterrizaje de " + getName());
 		
 	}
+	
 
 }

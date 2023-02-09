@@ -16,6 +16,8 @@ public class Main {
 				land.canLand();
 			} else {
 				System.out.println(obj.getName() + " no puede aterrizar");
+				
+			
 			}
 		}
 
