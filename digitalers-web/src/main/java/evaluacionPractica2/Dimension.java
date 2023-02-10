@@ -1,44 +1,47 @@
 package evaluacionPractica2;
 
 public class Dimension {
-	private Double alto;
-	private Double ancho;
-	private Double profundidad;
+	private double alto;
+	private double ancho;
+	private double profundidad;
 
 	public Dimension() {
+		this.ancho = 0;
+		this.alto = 0;
+		this.profundidad = 0;
 	}
 
-	public Dimension(Double alto, Double ancho, Double profundidad) {
+	public Dimension(double alto, double ancho, double profundidad) {
 		this.alto = alto;
 		this.ancho = ancho;
 		this.profundidad = profundidad;
 	}
 
-	public Double getAlto() {
+	public double getAlto() {
 		return alto;
 	}
 
-	public void setAlto(Double alto) {
+	public void setAlto(double alto) {
 		this.alto = alto;
 	}
 
-	public Double getAncho() {
+	public double getAncho() {
 		return ancho;
 	}
 
-	public void setAncho(Double ancho) {
+	public void setAncho(double ancho) {
 		this.ancho = ancho;
 	}
 
-	public Double getProfundidad() {
+	public double getProfundidad() {
 		return profundidad;
 	}
 
-	public void setProfundidad(Double profundidad) {
+	public void setProfundidad(double profundidad) {
 		this.profundidad = profundidad;
 	}
 
-	public Double getVolumen(Double alto, Double ancho, Double profundidad) {
+	public Double getVolumen() {
 		return alto * ancho * profundidad;
 	}
 

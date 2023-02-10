@@ -2,16 +2,14 @@ package evaluacionPractica2;
 
 public class Figura {
 	private String codigo;
-	private Double precio;
+	private double precio;
 	private Superheroe superheroe;
 	private Dimension dimensiones;
-	
-	
 
 	public Figura() {
 	}
 
-	public Figura(String codigo, Double precio, Superheroe superheroe, Dimension dimensiones) {
+	public Figura(String codigo, double precio, Superheroe superheroe, Dimension dimensiones) {
 		this.codigo = codigo;
 		this.precio = precio;
 		this.superheroe = superheroe;
@@ -32,11 +30,11 @@ public class Figura {
 		this.codigo = codigo;
 	}
 
-	public Double getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(Double precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
@@ -56,8 +54,8 @@ public class Figura {
 		this.dimensiones = dimensiones;
 	}
 
-	public void subirPrecio(Double cantidad) {
-		setPrecio(getPrecio()+cantidad);
+	public void subirPrecio(double cantidad) {
+		setPrecio(getPrecio() + cantidad);
 	}
 
 }

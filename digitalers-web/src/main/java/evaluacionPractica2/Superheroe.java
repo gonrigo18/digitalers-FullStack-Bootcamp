@@ -3,21 +3,19 @@ package evaluacionPractica2;
 public class Superheroe {
 	private String nombre;
 	private String descripcion;
-	private Boolean capa;
+	private boolean capa;
 
 	public Superheroe(String nombre) {
 		this.nombre = nombre;
 		this.descripcion = "";
 		this.capa = false;
 	}
-	
 
-	public Superheroe(String nombre, Boolean capa) {
+	public Superheroe(String nombre, boolean capa) {
 		this.nombre = nombre;
 		this.descripcion = "";
 		this.capa = capa;
 	}
-
 
 	public String getNombre() {
 		return nombre;
@@ -35,12 +33,16 @@ public class Superheroe {
 		this.descripcion = descripcion;
 	}
 
-	public Boolean getCapa() {
+	public boolean getCapa() {
 		return capa;
 	}
 
-	public void setCapa(Boolean capa) {
+	public void setCapa(boolean capa) {
 		this.capa = capa;
+	}
+
+	public Boolean isCapa() {
+		return capa;
 	}
 
 	@Override

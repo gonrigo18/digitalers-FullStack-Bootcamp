@@ -1,14 +1,16 @@
 package evaluacionPractica2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
-public class Coleccion{
+public class Coleccion {
 	private String nombreColeccion;
-	private Figura[] listaFiguras;
+	private ArrayList<Figura> listaFiguras;
 
 	public Coleccion(String nombreColeccion) {
 		this.nombreColeccion = nombreColeccion;
-		Figura[] listaFiguras = new Figura[] {};
+		listaFiguras = new ArrayList<Figura>();
 	}
 
 	public String getNombreColeccion() {
@@ -20,47 +22,60 @@ public class Coleccion{
 	}
 
 	public void anadirFigura(Figura fig) {
-		this.listaFiguras[listaFiguras.length] = fig;
+		listaFiguras.add(fig);
 	}
 
-	public void subirPrecio(Double cantidad, String id) {
-		for (Figura figura : listaFiguras) {
-			if (figura.getCodigo() == id) {
-				figura.setPrecio(figura.getPrecio() + cantidad);
-			}else {
-				System.out.println("No se encuentra la figura dentro de la colleccion");
+	public void subirPrecio(double cantidad, String id) {
+		for (Figura figuraActual : listaFiguras) {
+			if (Objects.equals(figuraActual.getCodigo(), id)) {
+				figuraActual.setPrecio(figuraActual.getPrecio() + cantidad);
 			}
 		}
+
 	}
-	
-	public Figura[] conCapa(Figura[] lista) {
-		Figura[] conCapa = new Figura[] {};
-		for (Figura fig : lista) {
-			if (fig.getSuperheroe().getCapa().equals(true)) {
-				anadirFigura(fig);
+
+	public String conCapa() {
+		String cadena = "Figuras con capa:\n ";
+		for (Figura fig : listaFiguras) {
+			if (fig.getSuperheroe().isCapa()) {
+				cadena += fig + "\n";
 			}
 		}
-		return conCapa;
+		return cadena;
 	}
-	
-	public Figura masValioso(Figura[] lista) {
-		Figura figuraMasValiosa = new Figura();
-		for (int i = 0; i < lista.length; i++) {
-			if (lista[i].getPrecio() > figuraMasValiosa.getPrecio()) {
-				figuraMasValiosa = lista[i];
+
+	public Figura masValioso() {
+		Figura figuraMasValiosa = new Figura() {
+		};
+		for (Figura figuraActual : listaFiguras) {
+			if (figuraActual.getPrecio() > figuraMasValiosa.getPrecio()) {
+				figuraMasValiosa = figuraActual;
 			}
 		}
 		return figuraMasValiosa;
-		
+	}
+
+	public double getValorColeccion() {
+		double valorTotal = 0.0;
+		for (Figura figuraActual : listaFiguras) {
+			valorTotal = valorTotal + figuraActual.getPrecio();
+		}
+		return valorTotal;
+
+	}
+
+	public Double getVolumenColeccion() {
+		Double volumenTotal = 0.0;
+		for (Figura figuraActual : listaFiguras) {
+			volumenTotal = volumenTotal + figuraActual.getDimensiones().getVolumen();
+		}
+		return (volumenTotal + 200);
+
 	}
 
 	@Override
 	public String toString() {
-		return "Coleccion [nombreColeccion=" + nombreColeccion + ", listaFiguras=" + Arrays.toString(listaFiguras)
-				+ "]";
+		return "Coleccion [nombreColeccion=" + nombreColeccion + ", listaFiguras=" + listaFiguras + "]";
 	}
-	
-	
-	
 
 }
