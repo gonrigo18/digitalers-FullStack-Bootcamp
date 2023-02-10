@@ -77,7 +77,9 @@ public abstract class Tripulante implements Metodos {
 		this.barco = barco;
 	}
 
-	public void sueldo() {}
+	public abstract void mostrarDatos();
+
+	public abstract void sueldo();
 
 	@Override
 	public String toString() {

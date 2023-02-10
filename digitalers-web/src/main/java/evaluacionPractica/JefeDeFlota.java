@@ -1,13 +1,12 @@
 package evaluacionPractica;
 
-public class JefeDeFlota extends Tripulante implements Metodos{
+public class JefeDeFlota extends Tripulante implements Metodos {
 	private Integer pesoPescado;
 	private Integer pesoMarisco;
 	private final Float sueldo = 350000000f;
 	private Float sueldoTotal;
 	private Float bonoPescado;
 	private Float bonoMarisco;
-
 
 	public JefeDeFlota(Integer numeroCarnet, Integer edad, Integer tiempoEnLaEmpresa, String nombre, String telefono,
 			String sexo, Barco barco, Integer pesoPescado, Integer pesoMarisco) {
@@ -61,28 +60,42 @@ public class JefeDeFlota extends Tripulante implements Metodos{
 	}
 
 	public void calcularBonos() {
-		this.bonoPescado = this.pesoPescado * 1f;
-		this.bonoMarisco = this.pesoMarisco * 2f;
+		setBonoPescado(this.pesoPescado * 1f);
+		setBonoMarisco(this.pesoMarisco * 2f);
 	}
 
 	public void sueldoTotal() {
-		this.bonoPescado = this.pesoPescado * 1f;
-		this.bonoMarisco = this.pesoMarisco * 2f;
-		this.sueldoTotal = this.sueldo + this.bonoMarisco + this.bonoPescado;
+		calcularBonos();
+		setSueldoTotal(getSueldo() + getBonoMarisco() + getBonoPescado());
+		System.out.println("Sueldo total: " + getSueldoTotal());
 	}
+
 	public void sueldo() {
-		System.out.println("Sueldo: " + this.sueldo);
+		System.out.println("Sueldo base: " + getSueldo());
 	}
+
 	public void bono() {
-		System.out.println("Bono por pescado: " + (this.pesoPescado * 1f));
-		System.out.println("Bono por marisco: " + (this.pesoMarisco * 2f));
+		calcularBonos();
+		System.out.println("Bono por pescado: " + getBonoPescado());
+		System.out.println("Bono por marisco: " + getBonoMarisco());
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "JefeDeFlota [pesoPescado=" + pesoPescado + ", pesoMarisco=" + pesoMarisco + ", sueldo=" + sueldo
-				+ ", sueldoTotal=" + sueldoTotal + ", bonoPescado=" + bonoPescado + ", bonoMarisco=" + bonoMarisco
-				+ "]";
+		return super.toString() + "JefeDeFlota [pesoPescado=" + pesoPescado + ", pesoMarisco=" + pesoMarisco
+				+ ", sueldo=" + sueldo + ", sueldoTotal=" + sueldoTotal + ", bonoPescado=" + bonoPescado
+				+ ", bonoMarisco=" + bonoMarisco + "]";
+	}
+
+	@Override
+	public void mostrarDatos() {
+		System.out.println("Numero de carnet: " + getNumeroCarnet());
+		System.out.println("Nombre: " + getNombre());
+		System.out.println("Sexo: " + getSexo());
+		System.out.println("Edad: " + getEdad());
+		System.out.println("Telefono: " + getTelefono());
+		System.out.println("Tiempo en la empresa: " + getTiempoEnLaEmpresa() + " anos");
+
 	}
 
 }

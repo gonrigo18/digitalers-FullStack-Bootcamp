@@ -54,6 +54,13 @@ public class Barco {
 		this.capacidadDePasajeros = capacidadDePasajeros;
 	}
 
+	public void detalle() {
+		System.out.println("Nombre: " + getNombre());
+		System.out.println("Tipo: " + getTipo());
+		System.out.println("Capacidad de carga: " + getCapacidadDeCarga());
+		System.out.println("Capacidad de pasajeros: " + getCapacidadDePasajeros());
+	}
+
 	@Override
 	public String toString() {
 		return "Barco [nombre=" + nombre + ", tipo=" + tipo + ", capacidadDeCarga=" + capacidadDeCarga

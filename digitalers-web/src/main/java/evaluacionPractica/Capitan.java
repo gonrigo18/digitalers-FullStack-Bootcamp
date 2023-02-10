@@ -45,30 +45,48 @@ public class Capitan extends Tripulante implements Metodos {
 		System.out.println("Sueldo: " + this.sueldo);
 	}
 
-	public void bono() {
-		if (this.horasDeExperticia < 5000) {
-			System.out.println("Horas insuficientes");
-		} else if (this.horasDeExperticia >= 5000 && this.horasDeExperticia < 150000) {
-			this.bono = this.sueldo * 0.20f;
-			System.out.println("Bono: " + this.bono);
+	public void calcularBono() {
+		if (this.horasDeExperticia >= 5000 && this.horasDeExperticia < 150000) {
+			setBono(this.sueldo * 0.20f);
 		} else if (this.horasDeExperticia >= 150000 && this.horasDeExperticia < 300000) {
-			this.bono = this.sueldo * 0.40f;
-			System.out.println("Bono: " + this.bono);
+			setBono(this.sueldo * 0.40f);
 		} else {
-			this.bono = (this.sueldo * 0.75f);
-			System.out.println("Bono: " + this.bono);
+			setBono(this.sueldo * 0.75f);
 		}
 	}
 
 	public void sueldoTotal() {
 		this.sueldoTotal = this.sueldo + this.bono;
-		System.out.println("Sueldo total: "+ this.sueldoTotal);
+		System.out.println("Sueldo total: " + this.sueldoTotal);
 	}
 
 	@Override
 	public String toString() {
 		return super.toString() + "Capitan [horasDeExperticia=" + horasDeExperticia + ", sueldo=" + sueldo
 				+ ", sueldoTotal=" + sueldoTotal + ", bono=" + bono + "]";
+	}
+
+	@Override
+	public void mostrarDatos() {
+		System.out.println("Numero de carnet: " + getNumeroCarnet());
+		System.out.println("Nombre: " + getNombre());
+		System.out.println("Sexo: " + getSexo());
+		System.out.println("Edad: " + getEdad());
+		System.out.println("Telefono: " + getTelefono());
+		System.out.println("Tiempo en la empresa: " + getTiempoEnLaEmpresa() + " anos");
+
+	}
+
+	@Override
+	public void bono() {
+		if (this.horasDeExperticia > 5000) {
+			calcularBono();
+			System.out.println("Bono: " + getBono());
+		} else {
+			setBono(0f);
+			System.out.println("Horas insuficientes para el bono");
+		}
+
 	}
 
 }

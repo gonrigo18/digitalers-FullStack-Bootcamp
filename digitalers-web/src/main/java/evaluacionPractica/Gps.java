@@ -56,6 +56,14 @@ public class Gps {
 		this.diasTripulado = diasTripulado;
 	}
 
+	public void mostrarDatos() {
+		System.out.println("X: " + getCoordenadaX());
+		System.out.println("Y: " + getCoordenadaY());
+		System.out.println("Fecha: " + getFecha());
+		System.out.println("Hora: " + getHora());
+		System.out.println("Dias tripulados: " + getDiasTripulado());
+	}
+
 	@Override
 	public String toString() {
 		return "Gps [coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + ", fecha=" + fecha + ", hora="
