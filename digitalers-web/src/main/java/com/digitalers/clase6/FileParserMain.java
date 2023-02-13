@@ -2,15 +2,16 @@ package com.digitalers.clase6;
 
 public class FileParserMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParserException{
 
 
 		String tipoIngresadoPorUsuario = "pepe";
 		
-		TipoEnum[] tipos = TipoEnum.values();
-		
-		for (TipoEnum UnEnum : tipos) {
-			if(UnEnum.getTipo().equalsIgnoreCase(tipoIngresadoPorUsuario));
+		TipoEnum tipoValido = TipoEnum.getEnum(tipoIngresadoPorUsuario);
+		if (tipoValido != null) {
+			IFileParser unParser = ParserManager.getParser(tipoValido);
+			String valorParseado = unParser.parse();
+			System.out.println(valorParseado);
 		}
 	}
 

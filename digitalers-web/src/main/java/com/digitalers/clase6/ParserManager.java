@@ -2,7 +2,7 @@ package com.digitalers.clase6;
 
 public class ParserManager {
 
-	public IFileParser getParser(TipoEnum tipo) throws ParserException {
+	public static IFileParser getParser(TipoEnum tipo) throws ParserException {
 
 		if (tipo == null) {
 			throw new ParserException("Debe informar un  parser valido");
